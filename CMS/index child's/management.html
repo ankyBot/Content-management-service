@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create a column layout with Flexbox */
+.row {
+  display: flex;
+}
+
+/* Left column (menu) */
+.left {
+  flex: 40%;
+  padding: 15px 0;
+}
+
+.left h2 {
+  padding-left: 8px;
+}
+
+/* Right column (page content) */
+.right {
+  flex: 65%;
+  padding: 15px;
+}
+
+/* Style the search box */
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+/* Style the navigation menu inside the left column */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+
+#myMenu li a:hover {
+  background-color: #eee;
+}
+.im{
+    height: 100vh;
+    width: 900px;
+}
+</style>
+</head>
+<body>
+
+<h2>Search your Business/management Content</h2>
+<p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+
+<div class="row">
+  <div class="left" style=" background: linear-gradient(#181174,#fff);;">
+    <h2>Menu</h2>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+        <li><a href="">Management</a></li>
+        <li><a href="">Project Management</a></li>
+        <li><a href="">Quality Circles (Management)</a></li>
+        <li><a href="">Risk Management in Business</a></li>
+        <li><a href="">Strategic Planning</a></li>
+        <li><a href="">Time Management in the Workplace</a></li>
+        <li><a href="">Total Quality Managemen</a></li>
+        <li><a href="">Operations Research (OR)</a></li>
+        <li><a href="">Matrix Management</a></li>
+        <li><a href="">Managing Innovation</a></li>
+        <li><a href="">Management Fads</a></li>
+        <li><a href="">Management by Objectives</a></li>
+        <li><a href="">Information Management</a></li>
+        <li><a href="">Human Resource Management</a></li>
+        <li><a href="">Human Resource Development</a></li>
+        <li><a href="">Goal-Setting Theory</a></li>
+        <li><a href="">Goal-Setting in Management</a></li>
+        <li><a href="">Executive Development</a></li>
+        <li><a href="">Drucker, Peter F.</a></li>
+        <li><a href="">Change Management</a></li>
+        <li><a href="">Business Planning</a></li>
+        <li><a href="">Business Negotiation</a></li>
+        <li><a href="">Business Leadership</a></li>
+        <li><a href="">Business Intelligence</a></li>
+        <li><a href="">Business and Economic Forecasting</a></li>
+        <li><a href="">Bureaucracy</a></li>
+        <li><a href="">Bureaucracies in History</a></li>
+        <li><a href="">Arts Management</a></li>
+
+    </ul>
+  </div>
+  
+
+
+<script>
+function myFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
